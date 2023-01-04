@@ -1,0 +1,10 @@
+server/public/
+client/node_modules/
+server/node_modules/
+client/dist/
+server/.env
+back/
+client/.env
+client/.env.production
+server/public/index.html
+server/sendgrid.env

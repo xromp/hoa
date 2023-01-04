@@ -1,0 +1,22 @@
+const bcrypt = require('bcrypt')
+const nodemailer = require("nodemailer");
+const http = require('http')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
+
+const emailTemplate = require('../controllers/utils/email-template')
+const Thread = require('../models/maintenance_request_thread')
+const MaintenanceOrder = require('../models/maintenance_order')
+const MaintenanceRequest = require('../models/maintenance_request')
+const Vendor = require('../models/vendor')
+const User = require('../models/user')
+const MaintenanceRequestVendor = require('../models/maintenance_request_vendor')
+const UserRole = require('../models/user_role')
+const Property = require('../models/property')
+const PropertyManager = require('../models/property_manager')
+const UserOrgRole = require('../models/user_org_role')
+const pushNotif = require('../controllers/push_notif')
+const mailController = require('../controllers/mail')
+const mainController = require('../controllers/main')
+const { getVendorUserById, getVendorVendorById } = require('../controllers/vendor_user.controller')
+const { notifyUser } = require('../controllers/notification.controller')
